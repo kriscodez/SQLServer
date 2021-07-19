@@ -19,3 +19,10 @@ SELECT VendorName, DefaultAccountNo, AccountDescription
 FROM Vendors JOIN GLAccounts
 	ON Vendors.DefaultAccountNo = GLAccounts.AccountNo
 ORDER BY AccountDescription, VendorName
+
+--- Implicit Join Syntax
+--- Note: It's best practice to use explicit sytax. Also, the WHERE clause makes it an inner join, remove the WHERE and it becomes a cross join
+
+Select InvoiceNumber, VendorName
+FROM Vendors,Invoices
+WHERE Vendors.VendorID = Invoices.VendorID
